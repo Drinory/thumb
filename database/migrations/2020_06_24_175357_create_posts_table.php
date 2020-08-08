@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('text');
             $table->string('image');
-            $table->string('category')->nullable();
+            $table->integer('category');
             $table->boolean('favorite')->default(0);
             $table->boolean('firstpage')->default(0);
             $table->timestamps();

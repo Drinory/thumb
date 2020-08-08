@@ -27,7 +27,7 @@ Route::delete('/post/delete', 'PostController@delete')->name('post.delete');
 
 
 // json here
-Route::get('/getPosts', 'PostController@getPosts')->name('getPosts');
+Route::get('/getPosts/{id}', 'PostController@getPosts')->name('getPosts');
 
 
 // CATEGORIES SECTION

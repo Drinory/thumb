@@ -18,7 +18,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::orderBy('id', 'DESC')->where('firstpage', 1)->take(3)->get();
-        $favorites = Post::where('favorite' , 1)->take(10)->get(); 
+        $favorites = Post::where('favorite' ,'=', 1)->take(10)->get(); 
         $recents = Post::orderBy('id', 'DESC')->take(3)->get();
 
         return view('index')->with('posts', $posts)
@@ -106,9 +106,9 @@ class PostController extends Controller
 
 
 
-    public function getPosts(){
+    public function getPosts($id){
 
-           $posts = Post::orderby('id','desc')->select('*')->get(); 
+        $posts = Post::orderby('id','desc')->where('firstpage', 1)->skip($id)->take(3)->get(); 
         
         // Fetch all records
         $postData['data'] = $posts;
