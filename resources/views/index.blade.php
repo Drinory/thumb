@@ -10,19 +10,19 @@
 					@foreach($favorites as $favorite)
 						<div class="blog-item" >
 							<div class="blog-inner">
-								<a href="blog-detail.html">
+								<a href="{{ route('post.show', $favorite->id) }}">
 									<img src="images/{{$favorite->image}}"  alt="" />
 								</a>
 								<div class="info">
 									<div class="tags">
-										<a href="#">{{$favorite->category}}</a>
+										<a href="{{ url('') }}/{{$favorite->originalCategory}}">{{$favorite->category}}</a>
 									</div>
 									<div class="title">
-										<a href="blog-detail.html">{{$favorite->title}}</a>
+										<a href="{{ route('post.show', $favorite->id) }}">{{$favorite->title}}</a>
 									</div>
 									<div class="meta">
 										<span class="date">{{\Carbon\Carbon::parse($favorite->created_at)->format('d/m/Y')}}</span>
-										<a class="readmore" href="blog-detail.html">Lexo me shume →</a>
+										<a class="readmore" href="{{ route('post.show', $favorite->id) }}">Lexo me shume →</a>
 									</div>
 								</div>
 							</div>
@@ -43,31 +43,31 @@
 						@foreach($posts as $post)
 						<div class="blog-item mb-6 postDiv">
 								<div class="blog-inner">
-									<a href="blog-detail.html">
+									<a href="{{ route('post.show', $post->id) }}">
 										<div class="overlay"><i class="mdi-link-variant"></i></div>
 										<img src="../../images/blog/blog_24.jpg" alt="" />
 									</a>
 									<div class="info" >
 										<div class="tags" >
-											<a href="#">{{$post->category}}</a>
+											<a href="{{ url('') }}/{{ $post->originalCategory }}">{{$post->category}}</a>
 										</div>
 										<div class="title">
-											<a href="blog-detail.html">{{$post->title}}</a>
+											<a href="{{ route('post.show', $post->id) }}">{{$post->title}}</a>
 										</div>
 										<div class="meta" >
 											<span class="date">{{\Carbon\Carbon::parse($post->created_at)->format('d/m/Y')}}</span>
 											<div class="divider">-</div>
-											<span class="author">Postuar nga <a href="#">Blerim Iseni</a></span>
+											<span class="author">Postuar nga <a href="team.index">Blerim Iseni</a></span>
 										</div>
 										<div class="text" >
 											<p style="height: 80px; overflow:hidden;">{{ $post->text }}</p>
-											<a href="#" class="button small">Lexo me shume</a>
+											<a href="{{ route('post.show', $post->id) }}" class="button small">Lexo me shume</a>
 										</div>
 									</div>
 									<div class="info-bottom">
 										<div class="date">{{\Carbon\Carbon::parse($post->created_at)->format('d/m/Y')}}</div>
 										<div class="comment">
-											Kategoria: {{$post->category}}
+											<a href="{{ url('') }}/{{ $post->originalCategory }}">Kategoria: {{$post->category}}</a>
 										</div>
 									</div>
 								</div>
@@ -125,7 +125,7 @@
 							@foreach($recents as $recent)
 								<li>
 									<div class="featured">
-										<a href="blog-detail.html">
+										<a href="{{ route('post.show', $recent->id) }}">
 											<img src="images/{{$recent->image}}" alt="" />
 										</a>
 									</div>
@@ -134,7 +134,7 @@
 											<a href="blog-detail.html">{{$recent->title}}</a>
 										</h6>
 										<div class="info">
-											<div class="date">May 31, 2017</div>
+											<div class="date">{{\Carbon\Carbon::parse($recent->created_at)->format('d/m/Y')}}</div>
 											<div class="excerpt">{{\Illuminate\Support\Str::words($recent->text, 10)}}</div>
 										</div>
 									</div>
@@ -189,7 +189,7 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="banner">
-						<a href="#" class="link">
+						<a href="{{ route('team.index') }}" class="link">
 							<img src="../../images/banner/banner_4.jpg" alt="" />
 						</a>
 						<div class="caption">
@@ -199,7 +199,7 @@
 				</div>
 				<div class="col-md-4">
 					<div class="banner">
-						<a href="#" class="link">
+						<a href="{{ route('contact') }}" class="link">
 							<img src="../../images/banner/banner_5.jpg" alt="" />
 						</a>
 						<div class="caption">

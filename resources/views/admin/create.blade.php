@@ -38,7 +38,7 @@
               <div class="form-group">
                 <label for="exampleFormControlSelect1">Cfar po thumbon?</label>
                 <select type="text" class="form-control" id="exampleFormControlSelect1" name="category">
-                  <option selected>E Pergjithshme</option>
+                  <option selected value="4">E Pergjithshme</option>
                   <option value="1">Keqperdorimet</option>
                   <option value="2">Korrupsionin</option>
                   <option value="3">Partite Politike</option>

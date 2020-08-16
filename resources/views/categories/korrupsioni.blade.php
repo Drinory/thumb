@@ -23,25 +23,25 @@
 				<div class="col-md-4">
 					<div class="blog-item text-center mb-6">
 						<div class="blog-inner">
-							<a href="blog-detail.html">
+							<a href="{{route('post.show', $post->id)}}">
 								<div class="overlay"><i class="mdi-link-variant"></i></div>
-								<img src="{{url('')}}/image/{{$post->image}}" alt="" />
+								<img src="{{url('')}}/images/{{$post->image}}" alt="" />
 							</a>
-							<div class="info" style="height:350px;">
-								<div class="tags" style="height:50px;">
-									<a href="#">{{$post->category}}</a>
+							<div class="info" style="height:300px;">
+								<div class="tags" style="height:30px;">
+									<a href="{{url('')}}/{{$post->originalCategory}}">{{$post->category}}</a>
 								</div>
-								<div class="title" style="height:100px;">
-									<a href="blog-detail.html">{{$post->title}}</a>
+								<div class="title" style="height:70px;">
+									<a href="{{route('post.show', $post->id)}}">{{ \Illuminate\Support\Str::limit($post->title, 40, $end='...') }}</a>
 								</div>
 								<div class="text" >
-									<p style="height:165px; overflow:hidden;">{{$post->text}}</p>
-									<a href="#" class="button small">Lexo Me Shume</a>
+									<p style="height:155px; overflow:hidden;">{{$post->text}}</p>
+									<a href="{{route('post.show', $post->id)}}" class="button small">Lexo Me Shume</a>
 								</div>
 							</div>
 							<div class="meta">
 								<span class="date">{{\Carbon\Carbon::parse($post->created_at)->format('d/m/Y')}}</span>
-								<span class="author">Postuar nga: <a href="#">Blerim Iseni</a></span>
+								<span class="author">Postuar nga: <a href="{{route('team.index')}}">Blerim Iseni</a></span>
 							</div>
 						</div>
 					</div>

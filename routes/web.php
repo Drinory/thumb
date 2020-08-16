@@ -31,10 +31,10 @@ Route::get('/getPosts/{id}', 'PostController@getPosts')->name('getPosts');
 
 
 // CATEGORIES SECTION
-Route::get('/pergjithshme', 'PostController@pergjithshme')->name('pergjithshme');
-Route::get('/keqperdorime', 'PostController@keqperdorime')->name('keqperdorime');
-Route::get('/korrupsioni', 'PostController@korrupsioni')->name('korrupsioni');
-Route::get('/partite', 'PostController@partite')->name('partite');
+Route::get('/4', 'PostController@pergjithshme')->name('pergjithshme');
+Route::get('/1', 'PostController@keqperdorime')->name('keqperdorime');
+Route::get('/2', 'PostController@korrupsioni')->name('korrupsioni');
+Route::get('/3', 'PostController@partite')->name('partite');
 
 
 

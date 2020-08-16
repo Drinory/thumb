@@ -65,22 +65,8 @@ class PostController extends Controller
             'text' => $request->get('text'),
         ]);
 
-        $kategoria = $request->get('category');
-        switch($kategoria){
-            case 1:
-            $post->category = "Keqperdorimet";
-            break;
+        $post->category = $request->get('category');
 
-            case 2:
-                $post->category = "Korrupsionin";
-            break;
-
-            case 3:
-                $post->category = "Partite Politike";
-            break;
-
-            default: $post->category = "E Pergjithshme" ;
-        } 
 
         if (isset($request->favorite)) {
             $post->favorite = 1;
@@ -115,6 +101,43 @@ class PostController extends Controller
    
         echo json_encode($postData);
         exit;
+    }
+
+    public function getCategoryPosts($id, $type){
+
+        if($type == 1){
+            $posts = Post::orderby('id','desc')->where('category', 1)->skip($id)->take(3)->get(); 
+
+            // Fetch all records
+            $postData['data'] = $posts;
+            echo json_encode($postData);
+            exit;
+
+        } else if($type = 2){
+            $posts = Post::orderby('id','desc')->where('category', 2)->skip($id)->take(3)->get(); 
+        
+            // Fetch all records
+            $postData['data'] = $posts;
+            echo json_encode($postData);
+            exit;
+
+        }else if($type = 3){
+            $posts = Post::orderby('id','desc')->where('category', 3)->skip($id)->take(3)->get(); 
+        
+            // Fetch all records
+            $postData['data'] = $posts;
+            echo json_encode($postData);
+            exit;
+
+        } else {
+            $posts = Post::orderby('id','desc')->where('category', 4)->skip($id)->take(3)->get(); 
+        
+            // Fetch all records
+            $postData['data'] = $posts;
+            echo json_encode($postData);
+            exit;
+        }
+
     }
     /**
      * Show the form for editing the specified resource.
@@ -151,20 +174,23 @@ class PostController extends Controller
     }
 
     public function pergjithshme(){
-        $posts = DB::table('posts')->where('category', 'E Pergjithshme')->select('*')->get();
+        
+        $posts = Post::orderBy('id', 'DESC')->where('category', 4)->take(6)->get();
         return view('categories/pergjithshme')->with('posts', $posts);
     }
     public function keqperdorime(){
-        $posts = DB::table('posts')->where('category', 'Keqperdorimet')->select('*')->get();
+        
+        $posts = Post::orderBy('id', 'DESC')->where('category', 1)->take(6)->get();
         return view('categories/keqperdorime')->with('posts', $posts);
     }
     public function korrupsioni(){
         
-        $posts = DB::table('posts')->where('category', 'Korrupsionin')->select('*')->get();
+        $posts = Post::orderBy('id', 'DESC')->where('category', 2)->take(6)->get();
         return view('categories/korrupsioni')->with('posts', $posts);
     }
     public function partite(){
-        $posts = DB::table('posts')->where('category', 'Partite Politike')->select('*')->get();
+        
+        $posts = Post::orderBy('id', 'DESC')->where('category', 3)->take(6)->get();
         return view('categories/partite')->with('posts', $posts);
     }
    

@@ -39,7 +39,7 @@
 				<div class="widget">
 					<div class="widget-title-wrapper">
 						<div class="widget-title">
-							GET CONNECTED
+							NA KONTAKONI
 							<div class="simple-line"></div>
 						</div>
 						<div class="simple-line"></div>
@@ -82,7 +82,7 @@
 				<div class="widget">
 					<div class="widget-title-wrapper">
 						<div class="widget-title">
-							THEME AD WIDGET
+							REKLAME
 							<div class="simple-line"></div>
 						</div>
 						<div class="simple-line"></div>
@@ -101,18 +101,18 @@
 				<div class="mobile-menu">
 					<ul class="nav-collapse navbar-nav">
 						<li>
-							<a href="#">Ballina </a>
+							<a href="{{ url('') }}">Ballina </a>
 						</li>
 						<li>
-							<a href="#">Rreth Nesh</a>
+							<a href="{{ route('team.index') }}">Rreth Nesh</a>
 						</li>
 						<li>
 							<a href="#">Thumbimet <i class="fa fa-angle-down"></i></a>
 							<ul class="sub-menu">
-								<li><a href="categories-1.html">Thumbimet e Pergjithshme</li>
-								<li><a href="categories-2.html">Thumbo Keqperdorimet </li>
-								<li><a href="categories-3.html">Thumbo Korrupsionin</a></li>
-								<li><a href="categories-4.html">Thumbo Partite Politike</a></li>
+								<li><a href="{{ route('pergjithshme') }}">Thumbimet e Pergjithshme</li>
+								<li><a href="{{ route('keqperdorime') }}">Thumbo Keqperdorimet </li>
+								<li><a href="{{ route('korrupsioni') }}">Thumbo Korrupsionin</a></li>
+								<li><a href="{{ route('partite') }}">Thumbo Partite Politike</a></li>
 							</ul>
 						</li>
 						<li><a href="#">Raporto</a></li>
@@ -169,18 +169,18 @@
 									<div class="main-menu-inner">
 										<ul class="nav-collapse navbar-nav">
 											<li>
-												<a href="#"> </a>
+												<a href="{{ url('') }}">Ballina</a>
 											</li>
 											<li>
-												<a href="#">Rreth Nesh </i></a>
+												<a href="{{ route('team.index') }}">Rreth Nesh </i></a>
 											</li>
 											<li>
 												<a href="#">Thumbimet <i class="fa fa-angle-down"></i></a>
 												<ul class="sub-menu">
-													<li><a href="categories-1.html">Thumbimet e Pergjithshme</li>
-													<li><a href="categories-2.html">Thumbo Keqperdorimet </li>
-													<li><a href="categories-3.html">Thumbo Korrupsionin</a></li>
-													<li><a href="categories-4.html">Thumbo Partite Politike</a></li>
+													<li><a href="{{ route('pergjithshme') }}">Thumbimet e Pergjithshme</li>
+													<li><a href="{{ route('keqperdorime') }}">Thumbo Keqperdorimet </li>
+													<li><a href="{{ route('korrupsioni') }}">Thumbo Korrupsionin</a></li>
+													<li><a href="{{ route('partite') }}">Thumbo Partite Politike</a></li>
 												</ul>
 											</li>
 											
@@ -228,24 +228,23 @@
 								<div class="main-menu-inner">
 									<ul class="nav-collapse navbar-nav">
 										<li>
-											<a href="#">Ballina </a>
+											<a href="{{ url('') }}">Ballina </a>
 										</li>
 										<li>
-											<a href="#">Rreth Nesh </a>
+											<a href="{{ route('team.index') }}">Rreth Nesh </a>
 										</li>
 										<li>
 											<a href="#">Thumbimet <i class="fa fa-angle-down"></i></a>
 											<ul class="sub-menu">
-												<li><a href="categories-1.html">Thumbimet e Pergjithshme</li>
-												<li><a href="categories-2.html">Thumbo Keqperdorimet </li>
-												<li><a href="categories-3.html">Thumbo Korrupsionin</a></li>
-												<li><a href="categories-4.html">Thumbo Partite Politike</a></li>
+												<li><a href="{{ route('pergjithshme') }}">Thumbimet e Pergjithshme</li>
+												<li><a href="{{ route('keqperdorime') }}">Thumbo Keqperdorimet </li>
+												<li><a href="{{ route('korrupsioni') }}">Thumbo Korrupsionin</a></li>
+												<li><a href="{{ route('partite') }}">Thumbo Partite Politike</a></li>
 											</ul>
 										</li>
 
-										<li><a href="#">Raporto</a></li>
-										
-										
+										<li><a href="{{ route('contact') }}">Raporto</a></li>
+
 									</ul>
 								</div>
 							</div>
@@ -266,9 +265,9 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<ul class="footer-menu">
-								<li><a href="#">BALLINA</a></li>
-								<li><a href="#">RRETH NESH</a></li>
-								<li><a href="#">RAPORTO</a></li>
+								<li><a href="{{ url('') }}">BALLINA</a></li>
+								<li><a href="{{ route('team.index') }}">RRETH NESH</a></li>
+								<li><a href="{{ route('contact') }}">RAPORTO</a></li>
 							</ul>
 						</div>
 						<div class="col-sm-6">

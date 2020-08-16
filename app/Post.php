@@ -14,4 +14,27 @@ class Post extends Model
         'firstpage',
         'favorite'
     ];
+
+    public function getCategoryAttribute($kategoria){
+        switch($kategoria){
+            case 1:
+                return "Keqperdorimet";
+            break;
+
+            case 2:
+                return "Korrupsionin";
+            break;
+
+            case 3:
+                return "Partite Politike";
+            break;
+
+            default: return "E Pergjithshme" ;
+        } 
+    }
+
+    public function getOriginalCategoryAttribute()
+    {
+        return $this->attributes['category'];
+    }
 }
