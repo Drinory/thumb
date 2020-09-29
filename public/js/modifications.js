@@ -1,13 +1,16 @@
 $(document).ready(function(){
-    
-    // Fetch all records
+    // Set x as 3, for the starting point so it can skip that much posts in the beginning
     x=3;
+    // On button click call the fetchRecords() function
      $('#but_fetchall').click(function(){
         
         fetchRecords(x);
+        // Every time the button is clicked add 3 to the x variable
         x+=3;
         
      });
+     
+    //  Function to display catgory as text not as number (as is stored in the database)
      function categoryLink(c){
         switch(c){
             case "Keqperdorimet":
@@ -25,6 +28,8 @@ $(document).ready(function(){
         } 
      }
     
+     
+    // Function that gets 3 posts, skiping the first 3, than 6 and so on. 
     function fetchRecords(n){
         $.ajax({
         url: 'getPosts/'+n,
@@ -46,7 +51,7 @@ $(document).ready(function(){
                     var m =  formattedDate.getMonth();
                     m += 1;
                     var y = formattedDate.getFullYear();
-
+                    
                     var thisDiv = "<div class='blog-item post mb-6 moreBox'>" + 
                              "<div class='blog-inner'>" + 
                                  "<a href='show/" + id + "'>" +
@@ -79,9 +84,11 @@ $(document).ready(function(){
                                  "</div>"+
                              "</div>"+
                          "</div>";
-                        
+
+                        // Append this 
                          $(thisDiv).appendTo("#userTable").hide().fadeIn('slow');
 
+                        //  Hide button if there are less than 3 posts left
                         if(len<3){              
                             $('#but_fetchall').css('visibility', 'hidden');
                             // var otherDiv = "<h2>"

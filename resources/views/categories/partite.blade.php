@@ -18,9 +18,9 @@
 	</div>
 	<div class="section blog-list mb-10">
 		<div class="container">
-			<div class="row">
+			<div class="row" id="userTables">
 			@foreach($posts as $post)
-			<div class="col-md-4">
+				<div class="col-md-4">
 					<div class="blog-item text-center mb-6">
 						<div class="blog-inner">
 							<a href="{{route('post.show', $post->id)}}">
@@ -51,6 +51,15 @@
 		</div>
 	</div>
 </div>
+<div class="load-more-wrapper">
+	<div class="load-more">
+		<a id="button_fetchall">ME SHUME POSTE</a>
+		<i class="fa fa-chevron-down"></i>
+	</div>
+</div>
+@endsection
+@section('scripts')
+
+<script src="{{ asset('js/categoriesLoad.js') }}"></script>
 
 @endsection
-

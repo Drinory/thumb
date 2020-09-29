@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    // Filable columns 
     protected $fillable = [
         'title',
         'text',
@@ -15,6 +16,7 @@ class Post extends Model
         'favorite'
     ];
 
+    // Category Accesory
     public function getCategoryAttribute($kategoria){
         switch($kategoria){
             case 1:
@@ -33,6 +35,7 @@ class Post extends Model
         } 
     }
 
+    // Return accesory so it can be accesed in its original form
     public function getOriginalCategoryAttribute()
     {
         return $this->attributes['category'];

@@ -11,6 +11,7 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // Return Index View
     public function index()
     {
         return view('contact');

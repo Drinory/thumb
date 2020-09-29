@@ -15,6 +15,7 @@ class TeamController extends Controller
      */
     public function index()
     {
+        // Return view with all Team data
         $members = Team::all();
         return view('team')->with('members', $members);
     }
@@ -26,6 +27,7 @@ class TeamController extends Controller
      */
     public function create()
     {
+        // Return view for creating team
         return view('admin.teamcreate');
     }
 
@@ -36,30 +38,40 @@ class TeamController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $post = new Team();
+    {   
+        // Validate user input
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'role' => 'required',
+            'facebook' => 'required',
+            'instagram' => 'required',
+            'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
+        ]);
+        
 
-        // create article
+        // Create team 
         $post = new Team([
             'name' => $request->get('name'),
             'description' => $request->get('description'),
             'role' => $request->get('role'),
             'facebook' => $request->get('facebook'),
-            'instagram' => $request->get('instagram')
+            'instagram' => $request->get('instagram'),
         ]);
+        // Image Save 
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            // prepare image
+            $new_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('/images'), $new_name);
+            $post->image = $new_name;
+            
+        }
 
-
-        $image = $request->file('image');
-        // prepare image
-        $new_name = rand() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('/images'), $new_name);
-
-        // set image with the new name
-        $post->image = $new_name;
-
-
+        // Save data
         $post->save();
 
+        // Return redirect
         return redirect()->route('team.create');
 
     }

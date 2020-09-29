@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('css')
+<link rel="stylesheet" href="{{ asset('dropzone/dist/basic.css') }}" type="text/css" media="all">
+@endsection
 @section('content')
 <div id="main">
 	<div class="section section-bg-2 section-fixed pt-17 pb-17">
@@ -7,7 +10,7 @@
 				<div class="col-md-12">
 					<div class="text-center">
 						<h2 class="white manuale fw-bolder fz-40">RAPORTO NJE NGJARJE</h2>
-						<h5 class="white fw-600 fz-20">Raportoni padrejtesite qe ju ka<br />Na ndihmoni te thumbojme</h5>
+						<h5 class="white fw-600 fz-20">Raportoni padrejtesite qe ju kane bere juve apo te tjereve<br />Na ndihmoni te thumbojme</h5>
 					</div>
 				</div>
 			</div>
@@ -30,6 +33,7 @@
 								<textarea class="highlighted" name="message" id="message" rows="8" placeholder="Pershkruaj Ngjarjen"></textarea>
 								<div class="mb-2"></div>
 							</div>
+
 							<div class="col-md-4">
 								<input type="text" class="highlighted" name="name" id="name" placeholder="Emri" />
 								<div class="mb-2"></div>
@@ -55,7 +59,10 @@
 							</div>
 						</div>
 					</form>
-
+					
+					<form action="#" class="dropzone" id="my-awesome-dropzone">
+					<div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+					</form>
 				</div>
 				<div class="col-sm-4">
 					<h5 class="white fw-600 fz-22 mb-1">INFORMACIONI PER KONTAKTIM</h5>
@@ -73,4 +80,7 @@
 		</div>
 	</div>
 </div>
+@endsection
+@section('scripts')
+<script src="{{ asset('dropzone/dist/dropzone.js') }}"></script>
 @endsection

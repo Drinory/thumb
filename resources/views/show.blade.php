@@ -27,7 +27,7 @@
 					<div class="single-content">
 						<p>{{$posts->text}}</p>
 						<div class="text-center mb-2">
-							<img width="480" src="../../images/blog_detail_1.jpg" alt="" />
+							<img width="480" src="{{ asset('images/blog_detail_1.jpg')}}" alt="" />
 						</div>
 					</div>
 					<div class="blog-detail info-bottom">

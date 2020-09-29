@@ -15,6 +15,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+    // Filable columns 
     protected $fillable = [
         'name', 'email', 'password',
     ];

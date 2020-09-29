@@ -45,7 +45,7 @@
 								<div class="blog-inner">
 									<a href="{{ route('post.show', $post->id) }}">
 										<div class="overlay"><i class="mdi-link-variant"></i></div>
-										<img src="../../images/blog/blog_24.jpg" alt="" />
+										<img src="{{ asset('images/blog/blog_24.jpg') }}" alt="" />
 									</a>
 									<div class="info" >
 										<div class="tags" >
@@ -94,7 +94,7 @@
 							<div class="simple-line"></div>
 						</div>
 						<div class="vcard text-center">
-							<img src="../../images/brooke.jpg" alt="" />
+							<img src="{{ asset('images/brooke.jpg') }}" alt="" />
 							<div class="mb-1"></div>
 							<p>Blerim Iseni <br>Punetor Administrativ, Social, Rinor<br>Nje Jete Kushtuar "DITURISE"</p>
 						</div>
@@ -152,7 +152,7 @@
 							<div class="simple-line"></div>
 						</div>
 						<div class="widget-ads text-center">
-							<a href="#"><img src="../../images/advertise-black.png" alt="" /></a>
+							<a href="#"><img src="{{ asset('images/advertise-black.png') }}" alt="" /></a>
 						</div>
 					</div>
 					<div class="widget">
@@ -164,17 +164,17 @@
 							<div class="simple-line"></div>
 						</div>
 						<div class="widget-gallery">
-							<a href="../../images/gallery/gallery_1.jpg" class="mfp-image gallery-item">
-								<img src="../../images/gallery/thumb/gallery_1.jpg" alt="" />
+							<a href="{{ asset('images/gallery/gallery_1.jpg') }}" class="mfp-image gallery-item">
+								<img src="{{ asset('images/gallery/thumb/gallery_1.jpg') }}" alt="" />
 							</a>
-							<a href="../../images/gallery/gallery_2.jpg" class="mfp-image gallery-item">
-								<img src="../../images/gallery/thumb/gallery_2.jpg" alt="" />
+							<a href="{{ asset('images/gallery/gallery_2.jpg')}}" class="mfp-image gallery-item">
+								<img src="{{ asset('images/gallery/thumb/gallery_2.jpg') }}" alt="" />
 							</a>
-							<a href="../../images/gallery/gallery_3.jpg" class="mfp-image gallery-item">
-								<img src="../../images/gallery/thumb/gallery_3.jpg" alt="" />
+							<a href="{{ asset('images/gallery/gallery_3.jpg') }}" class="mfp-image gallery-item">
+								<img src="../../images/gallery/thumb/gallery_3.jpg') }}" alt="" />
 							</a>
-							<a href="../../images/gallery/gallery_4.jpg" class="mfp-image gallery-item">
-								<img src="../../images/gallery/thumb/gallery_4.jpg" alt="" />
+							<a href="{{ asset('images/gallery/gallery_4.jpg') }}" class="mfp-image gallery-item">
+								<img src="{{ asset('images/gallery/thumb/gallery_4.jpg') }}" alt="" />
 							</a>
 							
 						</div>
@@ -190,7 +190,7 @@
 				<div class="col-md-4">
 					<div class="banner">
 						<a href="{{ route('team.index') }}" class="link">
-							<img src="../../images/banner/banner_4.jpg" alt="" />
+							<img src="{{ asset('images/banner/banner_4.jpg')}}" alt="" />
 						</a>
 						<div class="caption">
 							<span>KUSH JEMI NE</span>
@@ -200,7 +200,7 @@
 				<div class="col-md-4">
 					<div class="banner">
 						<a href="{{ route('contact') }}" class="link">
-							<img src="../../images/banner/banner_5.jpg" alt="" />
+							<img src="{{ asset('images/banner/banner_5.jpg') }}" alt="" />
 						</a>
 						<div class="caption">
 							<span>RAPORTO</span>
@@ -210,7 +210,7 @@
 				<div class="col-md-4">
 					<div class="banner">
 						<a href="#" class="link">
-							<img src="../../images/banner/banner_6.jpg" alt="" />
+							<img src="{{ asset('images/banner/banner_6.jpg') }}" alt="" />
 						</a>
 						<div class="caption">
 							<span>PUNET TONA</span>
@@ -227,6 +227,8 @@
 
 @section('scripts')
 
+<script src="{{ asset('js/modifications.js') }}"></script>
+		
     
 @endsection
 

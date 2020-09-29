@@ -10,7 +10,7 @@ $factory->define(Post::class, function (Faker $faker) {
         'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'text' => $faker->sentence($nbWords = 22, $variableNbWords = true) ,
         'image' => $faker->word ,
-        'category' => $faker->word,
+        'category' => $faker->numberBetween($min = 1, $max = 4),
         'firstpage' => $faker->boolean($chanceOfGettingTrue = 50) ,
         'favorite' => $faker->boolean($chanceOfGettingTrue = 50) ,
     ];

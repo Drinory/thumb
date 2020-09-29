@@ -20,8 +20,7 @@
 		<link rel="stylesheet" href="{{ asset('css/style-brave.css') }}" type="text/css" media="all" />
 		<link rel="stylesheet" href="{{ asset('css/custom.css') }}"  type="text/css" media="all" />
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Manuale:400,400i,500,500i,600,600i,700,700i%7CSource+Sans+Pro:300,400,400i,600,700" />
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		@yield('css')
 		
 			<!-- <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> -->
@@ -58,6 +57,7 @@
 						</div>
 						<div class="simple-line"></div>
 					</div>
+					<!-- TEMPORARY STATIC PICTURES (WIDGET GALLERY) -->
 					<div class="widget-gallery">
 						<a href="{{asset('images/gallery/gallery_1.jpg')}} " class="mfp-image gallery-item">
 							<img src="{{asset('images/gallery/thumb/gallery_1.jpg')}}" alt="" />
@@ -291,8 +291,6 @@
 		<script src="{{ asset('js/jquery.flexslider-min.js') }}"></script>
 		<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
 		<script src="{{ asset('js/script.js') }}"></script>
-		<script src="{{ asset('js/modifications.js') }}"></script>
-		
 		@yield('scripts')
 	</body>
 </html>
